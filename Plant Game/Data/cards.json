@@ -1,0 +1,34 @@
+[
+{
+    "image":"../photos/blueEyedGrassImg.jpg",
+    "name":"blueEyedGrass"
+},
+{
+    "image":"../photos/bushSunflowerImg.jpg",
+    "name":"bushSunflower"
+},
+{  
+"image":"../photos/californiaHoneysuckleImg.jpg",
+    "name":"californiaHoneysuckle"
+},
+{
+    "image":"../photos/californiaPoppyImg.jpg",
+    "name":"californiaPoppy"
+},
+{
+    "image":"../photos/cleavlandSageImg.jpg",
+    "name":"cleavlandSage"
+},
+{
+    "image":"../photos/coyoteBushImg.jpg",
+    "name":"coyoteBush"
+},
+{
+    "image":"../photos/deerGrassImg.jpg",
+    "name":"deerGrass"
+},
+{
+    "image":"../photos/toyonImg.jpg",
+    "name":"toyon"
+}
+]

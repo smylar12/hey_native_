@@ -28,29 +28,96 @@
     <br>
     <section class="plant-highlights">
       <div class="slider-wrapper">
+        <button class="slider-arrow slider-arrow--prev" type="button" aria-label="Previous plant">‹</button>
         <div class="slider">
           <div class="slide">
             <img src="Skylark lilac.JPG" alt="Skylark Lilac" id="slide-1" />
             <div class="caption">Skylark Lilac</div>
           </div>
           <div class="slide">
-            <img src="Monkey flower.JPG" alt="Monkey Flower" id="slide-2" />
+            <img src="Poppy1.JPG" alt="Poppy" id="slide-2" />
+            <div class="caption">Poppy</div>
+          </div>
+          <div class="slide">
+            <img src="Poppy2.JPG" alt="Poppy" id="slide-3" />
+            <div class="caption">Poppy</div>
+          </div>
+          <div class="slide">
+            <img src="Poppy3.JPG" alt="Poppy" id="slide-4" />
+            <div class="caption">Poppy</div>
+          </div>
+          <div class="slide">
+            <img src="Cleaveland Sage1.JPG" alt="Cleveland Sage" id="slide-5" />
+            <div class="caption">Cleveland Sage</div>
+          </div>
+          <div class="slide">
+            <img src="Cleaveland Sage2.JPG" alt="Cleveland Sage" id="slide-6" />
+            <div class="caption">Cleveland Sage</div>
+          </div>
+          <div class="slide">
+            <img src="Cleaveland Sage3.JPG" alt="Cleveland Sage" id="slide-7" />
+            <div class="caption">Cleveland Sage</div>
+          </div>
+          <div class="slide">
+            <img src="Cleavelandsage4.JPG" alt="Cleveland Sage" id="slide-8" />
+            <div class="caption">Cleveland Sage</div>
+          </div>
+          <div class="slide">
+            <img src="Monkey flower.JPG" alt="Monkey Flower" id="slide-9" />
             <div class="caption">Monkey Flower</div>
           </div>
           <div class="slide">
-            <img src="Blue eyed grass.JPG" alt="Blue Eyed Grass" id="slide-3" />
+            <img src="Monkeyflower2.JPG" alt="Monkey Flower" id="slide-10" />
+            <div class="caption">Monkey Flower</div>
+          </div>
+          <div class="slide">
+            <img src="Blue eyed grass.JPG" alt="Blue Eyed Grass" id="slide-11" />
             <div class="caption">Blue Eyed Grass</div>
           </div>
           <div class="slide">
-            <img src="Sycamore.JPG" alt="Sycamore" id="slide-4" />
+            <img src="WhiteSage.JPG" alt="White Sage" id="slide-12" />
+            <div class="caption">White Sage</div>
+          </div>
+          <div class="slide">
+            <img src="WoodlandStrawberry.JPG" alt="Woodland Strawberry" id="slide-13" />
+            <div class="caption">Woodland Strawberry</div>
+          </div>
+          <div class="slide">
+            <img src="Sycamore.JPG" alt="Sycamore" id="slide-14" />
             <div class="caption">Sycamore</div>
           </div>
+          <div class="slide">
+            <img src="Sycamore2.JPG" alt="Sycamore" id="slide-15" />
+            <div class="caption">Sycamore</div>
+          </div>
+          <div class="slide">
+            <img src="Cottonwood1.JPG" alt="Cottonwood" id="slide-16" />
+            <div class="caption">Cottonwood</div>
+          </div>
+          <div class="slide">
+            <img src="Cottonwood2.JPG" alt="Cottonwood" id="slide-17" />
+            <div class="caption">Cottonwood</div>
+          </div>
         </div>
+        <button class="slider-arrow slider-arrow--next" type="button" aria-label="Next plant">›</button>
         <div class="slider-nav">
           <a href="#slide-1"></a>
           <a href="#slide-2"></a>
           <a href="#slide-3"></a>
           <a href="#slide-4"></a>
+          <a href="#slide-5"></a>
+          <a href="#slide-6"></a>
+          <a href="#slide-7"></a>
+          <a href="#slide-8"></a>
+          <a href="#slide-9"></a>
+          <a href="#slide-10"></a>
+          <a href="#slide-11"></a>
+          <a href="#slide-12"></a>
+          <a href="#slide-13"></a>
+          <a href="#slide-14"></a>
+          <a href="#slide-15"></a>
+          <a href="#slide-16"></a>
+          <a href="#slide-17"></a>
         </div>
       </div>
       <div class="game-cta-panel">
@@ -71,5 +138,21 @@
     </p>
 </div>
   </div>
+  <script>
+    const slider = document.querySelector('.slider');
+    const prevButton = document.querySelector('.slider-arrow--prev');
+    const nextButton = document.querySelector('.slider-arrow--next');
+
+    if (slider && prevButton && nextButton) {
+      const scrollDistance = slider.clientWidth;
+
+      prevButton.addEventListener('click', () => {
+        slider.scrollBy({ left: -scrollDistance, behavior: 'smooth' });
+      });
+      nextButton.addEventListener('click', () => {
+        slider.scrollBy({ left: scrollDistance, behavior: 'smooth' });
+      });
+    }
+  </script>
   </body>
 </html>

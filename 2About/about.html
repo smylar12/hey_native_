@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <!-- <img src = "image file ( logo)" -->
+        <nav>
+          <ul>
+            <li><a href="../index.html"> Home</a></li>
+            <li><a href="../2About/about.html">About</a></li>
+            <li><a href="../3Meet the Plants/meetThePlants.html"> Meet the plants</a></li>
+            <li><a href="../4Layout/layout.html"> Layout of Garden</a></li>
+            <li><a href="../5getInvolved/getInvolved.html"> Get involved</a></li>
+          </ul>
+        </nav>
+      </div>
+      <br />
+      <br />
+      <h1>ABOUT</h1>
+    <h3>Hi! This is Surabhi. I am an 11th grader at Rancho Bernardo High School, and a Girl Scout Ambassador from troop 2948.</h3>
+    <h3> This native plant garden is a Gold Award project led by me. I am working with the Rangers of the Los Peñasquitos Preserve as well as members of the community who come to volunteer to make this garden a reality. The site is still under development and has been projected to go until July. If you would like to be a part of this ongoing effort, your contribution would be greatly appreciated. Check out the Get involved tab to learn more!</h3>
+    <br>
+    <hr>
+    <h2>Gallery</h2>
+    <div class="image-gallery">
+        <img src="1.JPG" alt="Image 1">
+        <img src="2.jpeg" alt="Image 2">
+        <img src="3.jpeg" alt="Image 3">
+        <img src="4.jpeg" alt="Image 4">
+        <img src="5.jpeg" alt="Image 5">
+        <img src="6.jpeg" alt="Image 6">
+        <img src="3-7.jpg" alt="Image 3-7">
+        <img src="IMG_6540.jpg" alt="Garden Photo">
+        <img src="michelleCheer.JPG" alt="Michelle Cheer">
+        <img src="WhatsApp Image 2026-03-27 at 5.35.08 AM (1).jpeg" alt="Community Photo 1">
+        <img src="WhatsApp Image 2026-03-27 at 5.35.08 AM (2).jpeg" alt="Community Photo 2">
+        <img src="WhatsApp Image 2026-03-27 at 5.35.08 AM (3).jpeg" alt="Community Photo 3">
+        <img src="WhatsApp Image 2026-03-27 at 5.35.08 AM (4).jpeg" alt="Community Photo 4">
+        <img src="April/2f1f885e-efee-4ba9-ba48-8fc30b3f62f7.JPG" alt="April Photo 1">
+        <img src="April/Screenshot 2026-06-04 063948.jpg" alt="April Photo 2">
+        <img src="April/Screenshot 2026-06-04 064053.jpg" alt="April Photo 3">
+        <img src="April/Screenshot 2026-06-04 064124.jpg" alt="April Photo 4">
+        <img src="April/Screenshot 2026-06-04 064200.jpg" alt="April Photo 5">
+        <img src="April/Screenshot 2026-06-04 064240.jpg" alt="April Photo 6">
+        <img src="April/Screenshot 2026-06-04 064314.jpg" alt="April Photo 7">
+        <img src="May/Screenshot 2026-06-04 020138.jpg" alt="May Photo 1">
+        <img src="May/Screenshot 2026-06-04 020228.jpg" alt="May Photo 2">
+        <img src="May/Screenshot 2026-06-04 020256.jpg" alt="May Photo 3">
+    </div>
+   
+    <hr>
+    <div class="footer l-box">
+      <p>
+        Project lead by Girl Scout Ambassador, Surabhi Mylar, Troop 2948
+      </p>
+    </div>
+
+    <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Close lightbox">×</button>
+      <img src="" alt="Enlarged image" id="lightbox-image" />
+    </div>
+
+    <script>
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const galleryImages = document.querySelectorAll('.image-gallery img');
+
+      galleryImages.forEach((img) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+          lightboxImage.src = img.src;
+          lightboxImage.alt = img.alt;
+          lightbox.classList.add('active');
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+    </script>
+  </body>
+</html>

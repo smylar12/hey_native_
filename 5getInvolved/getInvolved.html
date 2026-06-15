@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <div class=" container">
+    <div class = "navbar">
+        <!-- <img src = "image file ( logo)" -->
+         <nav>
+            <ul>
+                <li><a href="../index.html"> Home</a></li>
+                <li><a href="../2About/about.html">About</a></li>
+                <li><a href="../3Meet the Plants/meetThePlants.html"> Meet the plants</a></li>
+                <li><a href="../4Layout/layout.html"> Layout of Garden</a></li>
+                <li><a href="../5getInvolved/getInvolved.html"> Get involved</a></li>
+            </ul>
+         </nav>
+    </div>
+ 
+    <meta
+      name="description"
+      content="A layout example that shows off a responsive photo gallery."
+    />
+    <link rel="stylesheet" href="getInvolved.css" />
+  <br>
+  <h1>Get Involved</h1>
+  <h3>Support this local initiative and contribute to its success. Workshops are conducted on the first and third Saturdays of each month. Each workshop has an educational segment explaining the importance of native plants and how they are essential to San Diego's Ecology.This is followed by hands on service in the garden.</h3>
+<br>
+<hr>
+<h2>Upcoming Workshops</h2>
+<div class="upcoming-images">
+  <img src ="July.png" alt="Upcoming workshop in July">
+</div>
+<!-- Lightbox overlay (hidden until an image is clicked) -->
+<div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+  <img src="" alt="Enlarged image">
+</div>
+<br>
+<hr>
+<br>
+<h2>Previous Workshops</h2>
+<div class="prev-image">
+<img src="June.png" alt="Previous workshop in June">
+<img src="May.jpeg" alt="Previous workshop in May">
+<img src="April.jpeg" alt="Previous workshop in April">
+<img src="March.jpeg" alt="Previous workshop in March">
+<img src="February.jpeg" alt="Previous workshop in February">
+<img src="January.jpeg" alt="Previous workshop in January">
+</div>
+<br>
+<br>
+<br>
+  </body>
+  <script>
+    (function(){
+      const overlay = document.getElementById('lightbox');
+      const overlayImg = overlay.querySelector('img');
+
+      function openLightbox(src, alt){
+        overlayImg.src = src;
+        overlayImg.alt = alt || '';
+        overlay.classList.add('active');
+        overlay.setAttribute('aria-hidden','false');
+      }
+      function closeLightbox(){
+        overlay.classList.remove('active');
+        overlay.setAttribute('aria-hidden','true');
+        overlayImg.src = '';
+      }
+
+      // Attach click handler to all images on the page
+      document.querySelectorAll('img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', (e) => {
+          // avoid opening the lightbox when the image is already inside the overlay
+          if(overlay.contains(e.target)) return;
+          openLightbox(e.target.src, e.target.alt);
+        });
+      });
+
+      // Close when clicking the dark background
+      overlay.addEventListener('click', (e) => {
+        if(e.target === overlay) closeLightbox();
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+</html>
